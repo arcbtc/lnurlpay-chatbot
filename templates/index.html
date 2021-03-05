@@ -33,9 +33,11 @@
           //messagearray.pop();
           var messagetemp = data.message;
           console.log(messagetemp);
-          messagearray.unshift(messagetemp);
-
-          messagestr += "<h1 style='font-size:50px;'>" + data.message + "</h1>";
+          messagearray.push(messagetemp);
+          for (i = 0; i < messagearray.length; i++) {
+            messagestr +=
+              "<h1 style='font-size:50px;'>" + messagearray[i] + "</h1>";
+          }
           document.getElementById("messages").innerHTML = messagestr;
         },
         false
