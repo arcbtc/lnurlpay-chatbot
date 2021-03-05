@@ -30,7 +30,7 @@
         "greeting",
         function (event) {
           var data = JSON.parse(event.data);
-          messagearray.pop();
+          //messagearray.pop();
           var messagetemp = data.message;
           console.log(messagetemp);
           messagearray.unshift(messagetemp);
@@ -42,7 +42,7 @@
               messagearray[i] +
               "</h1>";
           }
-          document.getElementById("messages").innerHTML = messagestr;
+          document.getElementById("messages").innerHTML = messagetemp;
         },
         false
       );
