@@ -22,7 +22,7 @@ def publish_messages():
 
 @app.route("/lnurl/<lnurl>")
 def publish_lnurl(lnurl):
-    sse.publish({"lnurlevent": lnurl}, type="greeting")
+    sse.publish({"lnurl": lnurl}, type="lnurlevent")
     return "Message sent!"
 
 
