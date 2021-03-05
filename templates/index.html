@@ -26,8 +26,8 @@
         "greeting",
         function (event) {
           var data = JSON.parse(event.data);
-          if (data.lnurl) {
-            var LNURL = data.lnurl;
+          if (data.lnurlevent) {
+            var LNURL = data.lnurlevent;
             document.getElementById("qrcode").innerHTML =
               "<img src='/qr/" + LNURL + "'>";
           } else if (data.message) {
