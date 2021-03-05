@@ -23,7 +23,7 @@ def publish_messages(thenote):
 def publish_qr(LNURL):
     qr = pyqrcode.create(LNURL)
     stream = BytesIO()
-    qr.svg(stream, scale=6)
+    qr.svg(stream, scale=10)
     return (
         stream.getvalue(),
         200,
