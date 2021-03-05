@@ -20,7 +20,7 @@
     <script>
       var source = new EventSource("{{ url_for('sse.stream') }}");
       var messagearray = [];
-      var colorarray = ["#FFFFFF", "939597", "#414042"];
+      var colorarray = ["#FFFFFF", "#939597", "#414042"];
       var messagestr = "";
       source.addEventListener(
         "greeting",
