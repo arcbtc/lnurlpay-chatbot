@@ -17,7 +17,7 @@ def index():
 def publish_messages():
     request_data = request.json
     print(request_data)
-    print(request_data["content"])
+    print(request_data["comment"])
     sse.publish({"message": request_data["comment"]}, type="greeting")
     return "Message sent!"
 
