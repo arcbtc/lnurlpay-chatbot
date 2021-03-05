@@ -4,10 +4,6 @@
 
 ### Installation
 
-Clone this repo:
-
-    git clone https://github.com/arcbtc/lnurlpay-chatbot.git
-
 Install Redis:
 
     wget http://download.redis.io/redis-stable.tar.gz
@@ -16,8 +12,10 @@ Install Redis:
     sudo make install
     redis-server
 
-Install pipenv and libraries:
-
+Install lnurlpay-chatbot:
+    
+    git clone https://github.com/arcbtc/lnurlpay-chatbot.git
+    lnurlpay-chatbot
     cd ~/lnurlpay-chatbot
     sudo apt install pipenv
     pipenv install flask-sse gunicorn gevent pyqrcode
