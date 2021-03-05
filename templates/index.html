@@ -33,11 +33,12 @@
           //messagearray.pop();
           var messagetemp = data.message;
           console.log(messagetemp);
+          messagearray.shift();
           messagearray.push(messagetemp);
           for (i = 0; i < messagearray.length; i++) {
             messagestr +=
               "<h1 style='font-size:50px;'>" + messagearray[i] + "</h1>";
-            if (i == 3) {
+            if (i == 2) {
               i = messagearray.length;
             }
           }
