@@ -34,14 +34,8 @@
           var messagetemp = data.message;
           console.log(messagetemp);
           messagearray.unshift(messagetemp);
-          for (i = messagearray.length; i < messagearray.length; i++) {
-            messagestr +=
-              "<h1 style='font-size:50px;color:" +
-              colourarray[i] +
-              ";'>" +
-              messagearray[i] +
-              "</h1>";
-          }
+
+          messagestr += "<h1 style='font-size:50px;'>" + data.message + "</h1>";
           document.getElementById("messages").innerHTML = messagestr;
         },
         false
