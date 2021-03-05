@@ -18,7 +18,7 @@ def publish_messages():
     request_data = request.json
     print(request_data)
     print(request_data["content"])
-    sse.publish({"message": "thenote"}, type="greeting")
+    sse.publish({"message": request_data["content"]}, type="greeting")
     return "Message sent!"
 
 
