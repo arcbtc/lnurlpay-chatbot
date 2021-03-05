@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_sse import sse
 import pyqrcode
 from io import BytesIO
@@ -15,8 +15,9 @@ def index():
 
 @app.route("/message/", methods=["POST"])
 def publish_messages():
-    print(request)
-    print(request.args.get("content"))
+    request_data = request.json
+    print(request_data)
+    print(request_data["content"])
     sse.publish({"message": "thenote"}, type="greeting")
     return "Message sent!"
 
