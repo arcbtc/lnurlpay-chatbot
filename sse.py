@@ -20,7 +20,7 @@ def publish_messages(thenote):
 
 
 @app.route("/qr/<LNURL>")
-async def publish_qr(LNURL):
+def publish_qr(LNURL):
     qr = pyqrcode.create(LNURL)
     stream = BytesIO()
     qr.svg(stream, scale=3)
