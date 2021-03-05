@@ -13,8 +13,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/<thenote>")
+@app.route("/message/", methods=["POST"])
 def publish_messages(thenote):
+    print(request)
     sse.publish({"message": "thenote"}, type="greeting")
     return "Message sent!"
 
