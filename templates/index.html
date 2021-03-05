@@ -26,42 +26,37 @@
         "greeting",
         function (event) {
           var data = JSON.parse(event.data);
-          //messagearray.pop();
-          var messagetemp = data.message;
-          console.log(messagetemp);
+          if (data.lnurl) {
+            var LNURL = data.lnurl;
+            document.getElementById("qrcode").innerHTML =
+              "<img src='/qr/" + LNURL + "'>";
+          } else if (data.message) {
+            var messagetemp = data.message;
+            console.log(messagetemp);
 
-          messagearray.unshift(messagetemp);
-          for (i = 0; i < messagearray.length; i++) {
-            var mess = messagearray[i];
-            if (mess == null) {
-              mess = "Donation with no message!";
+            messagearray.unshift(messagetemp);
+            for (i = 0; i < messagearray.length; i++) {
+              var mess = messagearray[i];
+              if (mess == null) {
+                mess = "Donation with no message!";
+              }
+              messagestr +=
+                "<h1 style='font-size:50px;color:#fff;font-family: Arial, Helvetica, sans-serif'>" +
+                messagearray[i] +
+                "</h1>";
+              if (i == 2) {
+                messagearray.shift();
+                i = messagearray.length;
+              }
             }
-            messagestr +=
-              "<h1 style='font-size:50px;color:#fff;font-family: Arial, Helvetica, sans-serif'>" +
-              messagearray[i] +
-              "</h1>";
-            if (i == 2) {
-              messagearray.shift();
-              i = messagearray.length;
-            }
+            document.getElementById("messages").innerHTML = messagestr;
+            messagestr = "";
+            document.getElementById("myAudio").play();
           }
-          document.getElementById("messages").innerHTML = messagestr;
-          messagestr = "";
-          document.getElementById("myAudio").play();
         },
         false
       );
-      source.addEventListener(
-        "lnurlevent",
-        function (event) {
-          var data = JSON.parse(event.data);
-          //messagearray.pop();
-          var LNURL = data.lnurl;
-          document.getElementById("qrcode").innerHTML =
-            "<img src='/qr/" + LNURL + "'>";
-        },
-        false
-      );
+
       source.addEventListener(
         "error",
         function (event) {
