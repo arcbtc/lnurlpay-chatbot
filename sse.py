@@ -16,9 +16,13 @@ def index():
 @app.route("/message/", methods=["POST"])
 def publish_messages():
     request_data = request.json
-    print(request_data)
-    print(request_data["comment"])
     sse.publish({"message": request_data["comment"]}, type="greeting")
+    return "Message sent!"
+
+
+@app.route("/lnurl/<lnurl>")
+def publish_messages(lnurl):
+    sse.publish({"lnurl": lnurl}, type="lnurlevent")
     return "Message sent!"
 
 
