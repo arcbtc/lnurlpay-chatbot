@@ -23,10 +23,10 @@ def publish_messages(thenote):
 def publish_qr(LNURL):
     qr = pyqrcode.create(LNURL)
     stream = BytesIO()
-    qr.svg(stream, scale=3)
+    qr.svg(stream, scale=6)
     return (
         stream.getvalue(),
-        600,
+        200,
         {
             "Content-Type": "image/svg+xml",
             "Cache-Control": "no-cache, no-store, must-revalidate",
