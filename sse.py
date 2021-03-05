@@ -26,7 +26,7 @@ def publish_messages():
 def publish_qr(LNURL):
     qr = pyqrcode.create(LNURL)
     stream = BytesIO()
-    qr.svg(stream, scale=10, background=[0xFF, 0xFF, 0xCC])
+    qr.svg(stream, scale=10, background="#fff")
     return (
         stream.getvalue(),
         200,
