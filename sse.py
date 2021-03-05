@@ -26,7 +26,7 @@ def publish_qr(LNURL):
     qr.svg(stream, scale=3)
     return (
         stream.getvalue(),
-        200,
+        600,
         {
             "Content-Type": "image/svg+xml",
             "Cache-Control": "no-cache, no-store, must-revalidate",
