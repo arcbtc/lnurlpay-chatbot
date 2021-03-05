@@ -30,6 +30,7 @@
         "greeting",
         function (event) {
           var data = JSON.parse(event.data);
+          console.log(data);
           var messagetemp = data.message;
           messagearray += messagetemp;
           console.log(messagearray);
