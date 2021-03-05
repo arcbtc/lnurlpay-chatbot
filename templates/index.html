@@ -34,7 +34,7 @@
           var messagetemp = data.message;
           console.log(messagetemp);
 
-          messagearray.push(messagetemp);
+          messagearray.unshift(messagetemp);
           for (i = 0; i < messagearray.length; i++) {
             messagestr +=
               "<h1 style='font-size:50px;'>" + messagearray[i] + "</h1>";
