@@ -14,7 +14,7 @@ Install Redis:
     tar xvzf redis-stable.tar.gz
     cd redis-stable
     sudo make install
-    nohup redis-server &
+    redis-server
 
 Install pipenv and libraries:
 
@@ -22,4 +22,10 @@ Install pipenv and libraries:
     sudo apt install pipenv
     pipenv install flask-sse gunicorn gevent pyqrcode
     pipenv shell
-    gunicorn sse:app --worker-class gevent --bind 127.0.0.1:8000
+    gunicorn sse:app --worker-class gevent --bind 0.0.0.0:8000
+
+Open `http://0.0.0.0:8000`
+
+When creating the LNURL-pay in lnbits.com set the webhook to `http://0.0.0.0:8000/message/`
+
+Send the LNURL-pay to be QRcoded using `http://0.0.0.0:8000/lnurl/LNURLNIH983h49834....`
