@@ -30,10 +30,10 @@
         "greeting",
         function (event) {
           var data = JSON.parse(event.data);
+          messagearray.pop();
           var messagetemp = data.message;
           console.log(messagetemp);
           messagearray.unshift(messagetemp);
-          messagearray.pop();
           for (i = messagearray.length; i < messagearray.length; i++) {
             messagestr +=
               "<h1 style='font-size:50px;color:" +
