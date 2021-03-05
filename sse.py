@@ -21,7 +21,7 @@ def publish_messages():
 
 
 @app.route("/lnurl/<lnurl>")
-def publish_messages(lnurl):
+def publish_lnurl(lnurl):
     sse.publish({"lnurl": lnurl}, type="lnurlevent")
     return "Message sent!"
 
