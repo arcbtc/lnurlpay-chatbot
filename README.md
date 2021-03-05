@@ -26,4 +26,4 @@ Open `http://0.0.0.0:8000`
 
 When creating the LNURL-pay in lnbits.com set the webhook to `http://0.0.0.0:8000/message/`
 
-Send the LNURL-pay to be QRcoded using `http://0.0.0.0:8000/lnurl/LNURLNIH983h49834....`
+Send the LNURL-pay to be turned into a QR using `http://0.0.0.0:8000/lnurl/LNURLNIH983h49834....`
