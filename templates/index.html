@@ -5,7 +5,7 @@
   </head>
   <body style="background-color: #000">
     <audio id="myAudio">
-      <source src="kaching.mp3" type="audio/mpeg" />
+      <source src="{{ url_for('static', kaching.mp3') }}" type="audio/mpeg" />
     </audio>
     <center>
       <small id="error"></small>
@@ -68,6 +68,6 @@
         false
       );
     </script>
-    <script src="confetti.js"></script>
+    <script src="{{ url_for('static', fconfetti.js') }}"></script>
   </body>
 </html>
